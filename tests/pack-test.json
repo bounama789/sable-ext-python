@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "tests": [
+    {
+      "id": "capture-sample",
+      "kind": "capture",
+      "file": "fixtures/sample.py",
+      "expect": [
+        { "offset": 0, "capture": "keyword" },
+        { "offset": 7, "capture": "variable" },
+        { "offset": 33, "capture": "constant" },
+        { "offset": 39, "capture": "number" },
+        { "offset": 50, "capture": "type" },
+        { "offset": 63, "capture": "string" },
+        { "offset": 170, "capture": "escape" },
+        { "offset": 208, "capture": "function" },
+        { "offset": 254, "capture": "function.method" },
+        { "offset": 271, "capture": "comment" }
+      ]
+    }
+  ]
+}

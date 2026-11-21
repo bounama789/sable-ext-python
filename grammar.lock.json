@@ -1,0 +1,13 @@
+{
+  "formatVersion": 1,
+  "grammar": "python",
+  "source": {
+    "repo": "https://github.com/tree-sitter/tree-sitter-python",
+    "rev": "v0.23.6"
+  },
+  "abi": 14,
+  "library": {
+    "path": "grammar/libtree-sitter-python.so",
+    "sha256": "f25d08f1c172e70ed7a894c36e59ee611670b8f6b8055aa702f6b6fddf8c60a6"
+  }
+}

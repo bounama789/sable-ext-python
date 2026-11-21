@@ -1,0 +1,60 @@
+{
+  "schemaVersion": 1,
+  "id": "sable.lang-python",
+  "name": "Python",
+  "version": "1.1.0",
+  "publisher": "sable",
+  "description": "Python language support: identity, the LSP row, the apt recipe, and the grammar library (tree-sitter-python v0.23.6, abi 14). The pack row outranks the flat table; highlighting runs on the shipped grammar.",
+  "license": "MIT",
+  "engines": { "api": "^1.0" },
+  "permissions": {
+    "process.exec": ["pylsp", "python3"],
+    "pkg.install": [
+      { "ecosystem": "apt", "packages": ["python3-pylsp"] }
+    ]
+  },
+  "abi": ["arm64-v8a"],
+  "contributes": {
+    "languages": [
+      {
+        "id": "python",
+        "name": "Python",
+        "extensions": [".py"],
+        "grammar": "python"
+      }
+    ],
+    "grammars": [
+      {
+        "id": "python",
+        "library": "grammar/libtree-sitter-python.so",
+        "symbol": "tree_sitter_python",
+        "abi": 14,
+        "queries": {
+          "highlights": "queries/python/highlights.scm"
+        }
+      }
+    ],
+    "languageServers": [
+      {
+        "id": "pylsp",
+        "languages": ["python"],
+        "command": ["pylsp"],
+        "install": {
+          "method": "apt",
+          "packages": ["python3-pylsp"],
+          "provides": ["pylsp"]
+        }
+      }
+    ],
+    "tools": [
+      {
+        "id": "python3",
+        "detect": { "command": ["python3", "--version"] }
+      },
+      {
+        "id": "pylsp",
+        "detect": { "command": ["pylsp", "--version"] }
+      }
+    ]
+  }
+}
